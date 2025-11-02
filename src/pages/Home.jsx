@@ -1,210 +1,31 @@
 import React from 'react'
 import './Pages.css'
-import { Link } from 'react-router-dom'
-import { 
-  FaBullseye, FaHospital, FaBolt, FaSmile, FaDollarSign, FaUsers,
-  FaClipboardCheck, FaFileAlt, FaCalendarAlt, FaPaperPlane,
-  FaChartLine, FaShieldAlt, FaMoneyBillWave, FaChartBar
-} from 'react-icons/fa'
+import Hero from '../components/home/Hero'
+import Features from '../components/home/Features'
+import AboutGrid from '../components/home/AboutGrid'
+import CTA from '../components/shared/CTA'
 
 function Home() {
   return (
     <div className="page">
-      <section className="hero">
-        <div className="hero-content">
-          <div className="moto">
-            <h2 className="moto-text">Redefining Healthcare Revenue</h2>
-          </div>
-          <h1 className="hero-title">
-            Comprehensive <span className="gradient-text">Revenue Cycle Management</span> Services
-          </h1>
-          <p className="hero-description">
-            Comprehensive Revenue Cycle Management (RCM) services designed to enhance financial performance 
-            and operational efficiency for healthcare providers.
-          </p>
-          <div className="hero-actions">
-            <Link to="/contact" className="btn btn-primary">Schedule a Consultation</Link>
-            <Link to="/contact" className="btn btn-secondary">Contact Us Today</Link>
-          </div>
-        </div>
-        <div className="hero-image">
-          <picture>
-            <source
-              type="image/webp"
-              srcSet={
-                'https://images.unsplash.com/photo-1551434678-e076c223a692?w=400&h=300&fit=crop&q=80&fm=webp 400w, ' +
-                'https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=600&fit=crop&q=80&fm=webp 800w, ' +
-                'https://images.unsplash.com/photo-1551434678-e076c223a692?w=1200&h=900&fit=crop&q=80&fm=webp 1200w'
-              }
-              sizes="(max-width: 768px) 100vw, 50vw"
-            />
-            <source
-              srcSet={
-                'https://images.unsplash.com/photo-1551434678-e076c223a692?w=400&h=300&fit=crop&q=80 400w, ' +
-                'https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=600&fit=crop&q=80 800w, ' +
-                'https://images.unsplash.com/photo-1551434678-e076c223a692?w=1200&h=900&fit=crop&q=80 1200w'
-              }
-              sizes="(max-width: 768px) 100vw, 50vw"
-            />
-            {/* <img
-              src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=600&fit=crop&q=80"
-              alt="Healthcare professionals working with technology"
-              className="hero-main-image"
-              loading="eager"
-              onError={(e) => {
-                e.target.onerror = null;
-                e.target.src = '/assets/fallback-hero.jpg';
-              }}
-            /> */}
-          </picture>
-          <div className="hero-stats">
-            <div className="stat-card">
-              <div className="stat-icon" aria-hidden="true"><FaSmile /></div>
-              <div className="stat-value">98%</div>
-              <div className="stat-label">Client Satisfaction</div>
-            </div>
-            <div className="stat-card">
-              <div className="stat-icon" aria-hidden="true"><FaDollarSign /></div>
-              <div className="stat-value">$2B+</div>
-              <div className="stat-label">Revenue Recovered</div>
-            </div>
-            <div className="stat-card">
-              <div className="stat-icon" aria-hidden="true"><FaUsers /></div>
-              <div className="stat-value">500+</div>
-              <div className="stat-label">Healthcare Partners</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="about-compact">
-        <div className="about-grid">
-          <div className="about-card">
-            <img 
-              src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&h=300&fit=crop&q=80" 
-              alt="Mission" 
-              className="about-card-image"
-              loading="lazy"
-            />
-            <div className="about-icon">
-              <FaBullseye />
-            </div>
-            <h3>Our Mission</h3>
-            <p>Simplify revenue operations and help medical practices achieve faster reimbursements, cleaner claims, and consistent cash flow.</p>
-          </div>
-          <div className="about-card">
-            <img 
-              src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=400&h=300&fit=crop&q=80" 
-              alt="Expertise" 
-              className="about-card-image"
-              loading="lazy"
-            />
-            <div className="about-icon">
-              <FaHospital />
-            </div>
-            <h3>Expertise</h3>
-            <p>Deep domain knowledge across Orthopedics, Neurology, Spine, and Primary Care with process precision for every client.</p>
-          </div>
-          <div className="about-card">
-            <img 
-              src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=400&h=300&fit=crop&q=80" 
-              alt="Why Us" 
-              className="about-card-image"
-              loading="lazy"
-            />
-            <div className="about-icon">
-              <FaBolt />
-            </div>
-            <h3>Why Us</h3>
-            <p>Minimize claim errors, reduce administrative workloads, and maintain full compliance with payer and HIPAA guidelines.</p>
-          </div>
-        </div>
-      </section>
-
-      <section className="features">
-        <h2 className="section-title">Our Core RCM Services</h2>
-        <p className="section-subtitle">
-          Comprehensive solutions to optimize your revenue cycle from start to finish
-        </p>
-        <div className="features-grid">
-          <div className="feature-card">
-            <div className="feature-icon">
-              <FaClipboardCheck />
-            </div>
-            <h3>Verification of Benefits</h3>
-            <p>Real-time eligibility checks and detailed benefit summaries to reduce rejections and prevent billing errors.</p>
-          </div>
-          <div className="feature-card">
-            <div className="feature-icon">
-              <FaFileAlt />
-            </div>
-            <h3>Prior Authorization</h3>
-            <p>Complete authorization management with timely approvals and supporting documentation to reduce denials.</p>
-          </div>
-          <div className="feature-card">
-            <div className="feature-icon">
-              <FaCalendarAlt />
-            </div>
-            <h3>Scheduling Support</h3>
-            <p>Seamless appointment coordination with insurance verification to reduce no-shows and improve satisfaction.</p>
-          </div>
-          <div className="feature-card">
-            <div className="feature-icon">
-              <FaPaperPlane />
-            </div>
-            <h3>Claim Submission</h3>
-            <p>Clean, compliant claims submitted electronically within payer timelines with pre-submission audits.</p>
-          </div>
-        </div>
-        <div className="features-grid">
-          <div className="feature-card">
-            <div className="feature-icon">
-              <FaChartLine />
-            </div>
-            <h3>A/R Follow-Up</h3>
-            <p>Continuous tracking and follow-up of unpaid claims with clear communication for timely recovery.</p>
-          </div>
-          <div className="feature-card">
-            <div className="feature-icon">
-              <FaShieldAlt />
-            </div>
-            <h3>Denial Management</h3>
-            <p>Root-cause analysis, comprehensive appeals, and data-driven insights to maximize recoveries.</p>
-          </div>
-          <div className="feature-card">
-            <div className="feature-icon">
-              <FaMoneyBillWave />
-            </div>
-            <h3>Payment Posting</h3>
-            <p>Accurate ERA and manual posting with daily reconciliation and discrepancy identification.</p>
-          </div>
-          <div className="feature-card">
-            <div className="feature-icon">
-              <FaChartBar />
-            </div>
-            <h3>Reporting & Analytics</h3>
-            <p>Detailed dashboards tracking collections, denials, turnaround time, and payer trends for actionable insights.</p>
-          </div>
-        </div>
-      </section>
-
-      <section className="cta-section" style={{
-        backgroundImage: 'linear-gradient(135deg, rgba(30, 58, 138, 0.9) 0%, rgba(30, 58, 138, 0.8) 100%), url(https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&h=600&fit=crop&q=80)',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center'
-      }}>
-        <div className="cta-content">
-          <h2>Ready to Transform Your Revenue Cycle?</h2>
-          <p>Join hundreds of healthcare organizations already benefiting from our solutions.</p>
-          <div className="cta-buttons">
-            <Link to="/contact" className="btn btn-primary btn-large">Schedule a Consultation</Link>
-            <Link to="/contact" className="btn btn-secondary btn-large">Contact Us Today</Link>
-          </div>
-        </div>
-      </section>
+      <Hero />
+      <AboutGrid />
+      <Features />
+      <CTA 
+        title="Ready to Transform Your Revenue Cycle?"
+        description="Join hundreds of healthcare organizations already benefiting from our solutions."
+        primaryButton={{
+          text: "Schedule a Consultation",
+          link: "/contact"
+        }}
+        secondaryButton={{
+          text: "Contact Us Today",
+          link: "/contact"
+        }}
+        backgroundImage="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&h=600&fit=crop&q=80"
+      />
     </div>
   )
 }
 
 export default Home
-
