@@ -80,18 +80,21 @@ function Specialities() {
   return (
     <div className="page">
       <div className="page-header" style={{
-        backgroundImage: 'linear-gradient(135deg, rgba(30, 58, 138, 0.05) 0%, rgba(249, 115, 22, 0.05) 100%), url(https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=1200&h=400&fit=crop&q=80)',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        padding: '4rem 2rem',
-        borderRadius: '16px',
-        marginBottom: '3rem'
-      }}>
-        <h1>Our Approach</h1>
-        <p className="page-subtitle">
-          Precision-driven revenue cycle management tailored to your practice
-        </p>
-      </div>
+          backgroundImage: "linear-gradient(135deg, rgba(30, 58, 138, 0.18) 0%, rgba(249, 115, 22, 0.18) 100%), url('/assets/approach-bg.png')",
+          backgroundSize: 'cover',
+          backgroundRepeat: 'no-repeat',
+          backgroundPosition: 'center',
+          color: '#fff',
+          boxShadow: '0 4px 24px rgba(0,0,0,0.08)',
+          padding: '4rem 2rem',
+          borderRadius: '16px',
+          marginBottom: '3rem'
+        }}>
+          <h1 style={{textShadow: '0 2px 8px rgba(0,0,0,0.25)'}}>Our Approach</h1>
+          <p className="page-subtitle" style={{textShadow: '0 1px 4px rgba(0,0,0,0.18)'}}>
+            Precision-driven revenue cycle management tailored to your practice
+          </p>
+        </div>
 
       {/* Our Assurance Section */}
       <section className="assurance-section">
@@ -129,16 +132,22 @@ function Specialities() {
         </p>
 
         <div className="process-steps">
-          {processSteps.map((step, index) => (
-            <div key={index} className="process-step-card">
-              <div className="step-number">{step.number}</div>
-              <div className="step-content">
-                <h3>{step.title}</h3>
-                <p className="step-description">{step.description}</p>
-                <p className="step-details">{step.details}</p>
+            {processSteps.map((step, index) => (
+              <div 
+                key={index} 
+                className="process-step-card"
+                data-aos="fade-up"
+                data-aos-delay={index * 150}
+                data-aos-duration="800"
+              >
+                <div className="step-number">{step.number}</div>
+                <div className="step-content">
+                  <h3>{step.title}</h3>
+                  <p className="step-description">{step.description}</p>
+                  <p className="step-details">{step.details}</p>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
         </div>
 
         <div className="process-conclusion">

@@ -8,6 +8,7 @@ const Services = React.lazy(() => import('./pages/Services'))
 const ServicesNew = React.lazy(() => import('./pages/ServicesNew'))
 const Specialities = React.lazy(() => import('./pages/Specialities'))
 const Contact = React.lazy(() => import('./pages/Contact'))
+const Vision = React.lazy(() => import('./pages/Vision'))
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
             <Route path="/services" element={<ServicesNew />} />
             <Route path="/services-new" element={<Services />} />
             <Route path="/specialities" element={<Specialities />} />
+            <Route path="/vision" element={<Vision />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </Suspense>

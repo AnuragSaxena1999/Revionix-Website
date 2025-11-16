@@ -107,16 +107,22 @@ function Contact() {
         </div>
       )}
       <div className="page-header" style={{
-        background: 'linear-gradient(135deg, rgba(30, 58, 138, 0.06) 0%, rgba(249, 115, 22, 0.06) 100%)',
-        padding: '4rem 2rem',
-        borderRadius: '16px',
-        marginBottom: '3rem'
-      }}>
-        <h1>Contact Us</h1>
-        <p className="page-subtitle">
-          Get in touch with our team to learn how we can help your organization
-        </p>
-      </div>
+          background: 'linear-gradient(135deg, rgba(30, 58, 138, 0.06) 0%, rgba(249, 115, 22, 0.06) 100%)',
+          backgroundImage: "url('/assets/contact-bg.png')",
+          backgroundSize: 'cover',
+          backgroundRepeat: 'no-repeat',
+          backgroundPosition: 'center',
+          boxShadow: '0 4px 24px rgba(0,0,0,0.08)',
+          color: '#fff',
+          padding: '4rem 2rem',
+          borderRadius: '16px',
+          marginBottom: '3rem'
+        }}>
+          <h1 style={{textShadow: '0 2px 8px rgba(0,0,0,0.25)'}}>Contact Us</h1>
+          <p className="page-subtitle" style={{textShadow: '0 1px 4px rgba(0,0,0,0.18)'}}>
+            Get in touch with our team to learn how we can help your organization
+          </p>
+        </div>
 
       <div className="contact-container">
         <div className="contact-info">

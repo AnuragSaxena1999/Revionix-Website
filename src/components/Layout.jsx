@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { 
   FaBars, 
@@ -16,13 +16,43 @@ import './Layout.css'
 function Layout({ children }) {
   const location = useLocation()
   const [menuOpen, setMenuOpen] = useState(false)
+  const navRef = useRef(null)
+
+  // Close menu when clicking outside the navbar
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      // If menuOpen is false, don't run this logic
+      if (!menuOpen) return
+
+      // Check if click is outside the header
+      if (navRef.current && !navRef.current.contains(event.target)) {
+        setMenuOpen(false)
+      }
+    }
+
+    if (menuOpen) {
+      // Add small delay to avoid immediate close on click that opened the menu
+      setTimeout(() => {
+        document.addEventListener('click', handleClickOutside)
+      }, 100)
+    }
+
+    return () => {
+      document.removeEventListener('click', handleClickOutside)
+    }
+  }, [menuOpen])
+
+  // Close menu when any link is clicked
+  const handleLinkClick = () => {
+    setMenuOpen(false)
+  }
 
   return (
     <div className="layout">
       <a href="#main-content" className="skip-link">
         Skip to content
       </a>
-      <header className="header">
+      <header className="header" ref={navRef}>
         <nav className="nav-container">
           <div className="left-section">
             <Link to="/" className="logo">
@@ -40,10 +70,11 @@ function Layout({ children }) {
           </div>
           <div className="right-section">
             <ul className={`nav-links ${menuOpen ? 'open' : ''}`} role="navigation" aria-label="Main navigation">
-              <li><Link to="/" className={location.pathname === '/' ? 'active' : ''}>Home</Link></li>
-                <li><Link to="/services" className={location.pathname === '/services' ? 'active' : ''}>Services</Link></li>
-                <li><Link to="/specialities" className={location.pathname === '/specialities' ? 'active' : ''}>Specialities</Link></li>
-              <li><Link to="/contact" className={location.pathname === '/contact' ? 'active' : ''}>Contact</Link></li>
+              <li><Link to="/" className={location.pathname === '/' ? 'active' : ''} onClick={handleLinkClick}>Home</Link></li>
+                <li><Link to="/services" className={location.pathname === '/services' ? 'active' : ''} onClick={handleLinkClick}>Services</Link></li>
+                <li><Link to="/specialities" className={location.pathname === '/specialities' ? 'active' : ''} onClick={handleLinkClick}>Specialities</Link></li>
+                <li><Link to="/vision" className={location.pathname === '/vision' ? 'active' : ''} onClick={handleLinkClick}>Vision</Link></li>
+              <li><Link to="/contact" className={location.pathname === '/contact' ? 'active' : ''} onClick={handleLinkClick}>Contact</Link></li>
             </ul>
             <button
               className="nav-toggle"
@@ -76,6 +107,7 @@ function Layout({ children }) {
               <li><Link to="/">Home</Link></li>
               <li><Link to="/services">Services</Link></li>
               <li><Link to="/specialities">Specialities</Link></li>
+              <li><Link to="/vision">Our Vision</Link></li>
               <li><Link to="/contact">Contact</Link></li>
             </ul>
           </div>

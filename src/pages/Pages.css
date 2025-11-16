@@ -582,12 +582,45 @@
   border-radius: 12px;
   padding: 1.25rem;
   text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
 
 .pillar-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+  border-color: var(--primary-orange);
+}
+
+/* sliding top accent bar like value-card */
+.pillar-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-orange) 100%);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.pillar-card:hover::before {
+  transform: scaleX(1);
+}
+
+.pillar-card .pillar-icon {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.pillar-card:hover .pillar-icon {
+  transform: scale(1.08);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-orange) 100%);
+  color: var(--white);
+  border-color: transparent;
 }
 
 .pillar-icon {
@@ -597,10 +630,12 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, var(--primary-blue), var(--primary-orange));
-  color: #fff;
+  background: var(--white);
+  color: var(--primary-orange);
   font-size: 1.25rem;
   margin-bottom: 0.75rem;
+  border: 2px solid var(--primary-orange);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
 .pillar-card h4 {
@@ -832,16 +867,24 @@
 }
 
 .process-conclusion {
-  background: var(--gray-light);
+  /* keep original spacing and layout but use footer color for background */
+  background: var(--primary-blue);
+  color: var(--primary-orange);
   padding: 2rem;
   border-radius: 12px;
   text-align: center;
+  max-width: 960px;
+  margin: 1.5rem auto 0;
 }
 
 .process-conclusion p {
-  font-size: 1.25rem;
-  color: var(--primary-blue);
   margin: 0;
+  color: var(--primary-orange);
+}
+
+.process-conclusion p strong {
+  color: var(--primary-orange);
+  font-weight: 700;
 }
 
 /* Specialties Section Styles */

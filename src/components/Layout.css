@@ -171,6 +171,31 @@ main {
   transition: opacity 0.3s ease, color 0.3s ease;
 }
 
+/* Add orange sliding underline for footer links to match header tabs */
+.footer-section ul li a,
+.footer-links a {
+  position: relative;
+  /* small padding so underline has room without shifting layout */
+  padding-bottom: 4px;
+}
+
+.footer-section ul li a::after,
+.footer-links a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--primary-orange);
+  transition: width 0.3s ease;
+}
+
+.footer-section ul li a:hover::after,
+.footer-links a:hover::after {
+  width: 100%;
+}
+
 .footer-section ul li a:hover {
   opacity: 1;
   color: var(--primary-orange);
