@@ -1417,6 +1417,36 @@
   width: 100%;
 }
 
+
+
+/*form-group*/
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  width: 100%;
+  transition: all 0.25s ease-in-out;
+}
+
+.form-group label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #1e3a8a;
+  margin-bottom: 2px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  border: 1px solid #d3d7e0;
+  background: #f7f9fc;
+  font-size: 0.95rem;
+  transition: all 0.25s ease;
+  outline: none;
+}
 /* Responsive Design */
 @media (max-width: 968px) {
   .hero {

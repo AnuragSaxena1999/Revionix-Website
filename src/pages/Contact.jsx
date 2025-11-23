@@ -10,6 +10,7 @@ function Contact() {
     email: '',
     organization: '',
     phone: '',
+    contactReason: '',
     message: ''
   })
   const [status, setStatus] = useState({ submitting: false, success: null, error: null })
@@ -33,6 +34,7 @@ function Contact() {
       from_name: formData.name,
       from_email: formData.email,
       organization: formData.organization,
+      contact_reason: formData.contactReason,
       phone: formData.phone,
       message: formData.message
     }
@@ -264,6 +266,32 @@ function Contact() {
               autoComplete="tel"
             />
           </div>
+          <div className="form-group">
+  <label htmlFor="contactReason">Reason for Contact *</label>
+  <select
+    id="contactReason"
+    name="contactReason"
+    value={formData.contactReason}
+    onChange={handleChange}
+    required
+    aria-required="true"
+  >
+    <option value="">Select a reason</option>
+    <option value="Staffing Solutions">Staffing Solutions
+</option>
+    <option value="Medical Billing & Coding Staff">Medical Billing & Coding Staff
+</option>
+    <option value="Front Desk / Patient Access Specialists">Front Desk / Patient Access Specialists</option>
+    <option value="Authorization / Eligibility Specialists">Authorization / Eligibility Specialists
+</option>
+    <option value="AR Follow-up Executives">AR Follow-up Executives
+</option>
+    <option value="Virtual Assistants / Remote Billers">Virtual Assistants / Remote Billers</option>
+    <option value="Temporary Staffing Support">Temporary Staffing Support</option>
+    <option value="Full-Time Dedicated Resources">Full-Time Dedicated Resources</option>
+    <option value="Other">Other</option>
+  </select>
+</div>
           <div className="form-group">
             <label htmlFor="message">Message *</label>
             <textarea
