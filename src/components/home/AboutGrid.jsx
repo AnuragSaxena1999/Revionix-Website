@@ -7,8 +7,8 @@ function AboutGrid() {
     {
       image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&h=300&fit=crop&q=80',
       title: 'Our Mission',
-      description: 'Simplify revenue operations and help medical practices achieve faster reimbursements, cleaner claims, and consistent cash flow.',
-      link: '/about'
+      description: 'Simplify revenue operations and help medical practices achieve faster reimbursements, cleaner claims, and consistent cash flow.'
+      // link: '/about'
     },
     {
       image: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=400&h=300&fit=crop&q=80',
@@ -19,8 +19,8 @@ function AboutGrid() {
     {
       image: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=400&h=300&fit=crop&q=80',
       title: 'Why Us',
-      description: 'Minimize claim errors, reduce administrative workloads, and maintain full compliance with payer and HIPAA guidelines.',
-      link: '/about'
+      description: 'Minimize claim errors, reduce administrative workloads, and maintain full compliance with payer and HIPAA guidelines.'
+      // link: '/about'
     }
   ];
 
