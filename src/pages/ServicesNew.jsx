@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import AOS from 'aos'
 import './ServicesNew.css'
 import { 
   FaUserCheck,
@@ -52,13 +53,22 @@ const serviceImages = [
 ]
 
 export default function ServicesNew() {
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      once: false, // This ensures animations trigger on scroll up and down
+    });
+  }, []);
+
   return (
     <div className="page services-new-page">
       <header className="services-hero">
         <div className="services-hero-inner">
-          <h1>Comprehensive Revenue Cycle Management — Measurable Results</h1>
-          <p className="services-hero-sub">Partner with a team that blends healthcare domain expertise, proven workflows and analytics to protect your revenue and improve operational efficiency.</p>
-          <div className="services-hero-actions">
+          <h1 data-aos="fade-down">Comprehensive Revenue Cycle Management — Measurable Results</h1>
+          <p className="services-hero-sub" data-aos="fade-down" data-aos-delay="100">
+            Partner with a team that blends healthcare domain expertise, proven workflows and analytics to protect your revenue and improve operational efficiency.
+          </p>
+          <div className="services-hero-actions" data-aos="fade-up" data-aos-delay="200">
             <Link to="/contact" className="btn btn-primary">Request a Consultation</Link>
             <Link to="/contact" className="btn btn-secondary">Get Pricing</Link>
           </div>
@@ -68,7 +78,7 @@ export default function ServicesNew() {
       <section className="kpi-row">
         <div className="kpi-inner">
           {kpis.map((k, i) => (
-            <div key={i} className="kpi-card">
+            <div key={i} className="kpi-card" data-aos="fade-up" data-aos-delay={i * 100}>
               <div className="kpi-icon">{k.icon}</div>
               <div className="kpi-value">{k.value}</div>
               <div className="kpi-label">{k.label}</div>
@@ -78,22 +88,24 @@ export default function ServicesNew() {
       </section>
 
       <section className="services-intro">
-        <div className="lead">We manage the full revenue lifecycle — eligibility, authorizations, coding, claims, denials and AR recovery — using KPI-driven processes and a dedicated team assigned to your account.</div>
+        <div className="lead" data-aos="fade-up">
+          We manage the full revenue lifecycle — eligibility, authorizations, coding, claims, denials and AR recovery — using KPI-driven processes and a dedicated team assigned to your account.
+        </div>
 
         <div className="services-pillars">
-          <div className="pillar-card">
+          <div className="pillar-card" data-aos="fade-up" data-aos-delay="100">
             <div className="pillar-icon"><FaBullseye /></div>
             <h4>Accuracy</h4>
             <p>Clinical and coding review to ensure claim integrity and higher clean-claim rates.</p>
           </div>
 
-          <div className="pillar-card">
+          <div className="pillar-card" data-aos="fade-up" data-aos-delay="200">
             <div className="pillar-icon"><FaHandsHelping /></div>
             <h4>Partnership</h4>
             <p>Dedicated account teams integrate with your staff and systems for seamless operations.</p>
           </div>
 
-          <div className="pillar-card">
+          <div className="pillar-card" data-aos="fade-up" data-aos-delay="300">
             <div className="pillar-icon"><FaCertificate /></div>
             <h4>Compliance</h4>
             <p>HIPAA-forward processes and payer-compliant workflows to minimize risk.</p>
@@ -102,31 +114,29 @@ export default function ServicesNew() {
       </section>
 
       <section className="services-grid-section">
-        <h2 className="section-title">Our Services</h2>
-        <p className="section-subtitle">End-to-end RCM services designed to improve cash flow and operational efficiency.</p>
+        <h2 className="section-title" data-aos="fade-up">Our Services</h2>
+        <p className="section-subtitle" data-aos="fade-up" data-aos-delay="100">End-to-end RCM services designed to improve cash flow and operational efficiency.</p>
 
         <div className="services-cards-grid">
           {services.map((s, idx) => (
-            <article key={idx} className="service-card-modern">
+            <article key={idx} className="service-card-modern" data-aos="zoom-in" data-aos-delay={(idx % 4) * 100}>
               <img src={serviceImages[idx]} alt={s.title} className="service-card-image" loading="lazy" />
               <div className="service-card-top">
                 <div className="service-icon-large">{s.icon}</div>
               </div>
               <h3 className="service-title-card">{s.title}</h3>
               <p className="service-description-card">{s.description}</p>
-              <div className="service-card-footer">
-                <Link to="/contact" className="btn btn-primary btn-small">Learn More</Link>
-              </div>
+              
             </article>
           ))}
         </div>
       </section>
 
       <section className="testimonials">
-        <h3>What our clients say</h3>
+        <h3 data-aos="fade-up">What our clients say</h3>
         <div className="testimonials-grid">
           {testimonials.map((t, i) => (
-            <blockquote key={i} className="testimonial-card">
+            <blockquote key={i} className="testimonial-card" data-aos="fade-up" data-aos-delay={i * 150}>
               <div className="testimonial-quote-icon"><FaQuoteLeft /></div>
               <p>“{t.quote}”</p>
               <footer>- {t.name}</footer>
@@ -135,10 +145,10 @@ export default function ServicesNew() {
         </div>
       </section>
 
-      <section className="services-cta">
+      <section className="services-cta" data-aos="zoom-in">
         <div className="cta-inner">
           <h2>Ready to improve your revenue cycle?</h2>
-          <p>Schedule a brief discovery call and we’ll show you a prioritized plan to recover revenue and reduce A/R days.</p>
+          <p>Schedule a brief discovery call and we’ll show you a prioritized plan to recover revenue and reduce A/R days. </p>
           <Link to="/contact" className="btn btn-primary btn-large">Schedule a Discovery Call</Link>
         </div>
       </section>

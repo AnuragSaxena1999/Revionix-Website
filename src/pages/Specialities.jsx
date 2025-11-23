@@ -7,8 +7,12 @@ import {
   FaBone, 
   FaSyringe,
   FaHospitalAlt,
-  FaUserMd
+  FaUserMd,
+  FaBullseye,
+  FaShieldAlt,
+  FaClipboardCheck
 } from 'react-icons/fa'
+import DevelopmentProcess1 from '../components/home/DevelopmentProcess1.jsx'
 
 function Specialities() {
   const specialties = [
@@ -78,45 +82,53 @@ function Specialities() {
   ]
 
   return (
-    <div className="page">
-      <div className="page-header" style={{
-          backgroundImage: "linear-gradient(135deg, rgba(30, 58, 138, 0.18) 0%, rgba(249, 115, 22, 0.18) 100%), url('/assets/approach-bg.png')",
+    <div className="page" data-aos="fade-in">
+      <div data-aos="fade-up" className="page-header" style={{
+          backgroundImage: "linear-gradient(135deg, rgba(30, 58, 138, 0.7) 0%, rgba(25, 36, 70, 0.8) 100%), url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?fit=crop&w=1200&q=80')",
           backgroundSize: 'cover',
           backgroundRepeat: 'no-repeat',
           backgroundPosition: 'center',
+          backgroundAttachment: 'fixed', // Creates a parallax-like effect
           color: '#fff',
           boxShadow: '0 4px 24px rgba(0,0,0,0.08)',
           padding: '4rem 2rem',
           borderRadius: '16px',
-          marginBottom: '3rem'
+          marginBottom: '1rem'
         }}>
-          <h1 style={{textShadow: '0 2px 8px rgba(0,0,0,0.25)'}}>Our Approach</h1>
-          <p className="page-subtitle" style={{textShadow: '0 1px 4px rgba(0,0,0,0.18)'}}>
+          <h1 data-aos="fade-up" data-aos-delay="100" style={{textShadow: '0 2px 8px rgba(0,0,0,0.3)' , color:'#fff'}}>Our Approach</h1>
+          <p data-aos="fade-up" data-aos-delay="200" className="page-subtitle" style={{color: 'rgba(255, 255, 255, 0.9)', textShadow: '0 1px 4px rgba(0,0,0,0.2)'}}>
             Precision-driven revenue cycle management tailored to your practice
           </p>
         </div>
 
       {/* Our Assurance Section */}
-      <section className="assurance-section">
-        <div className="assurance-card">
-          <h2>Our Assurance</h2>
-          <div className="assurance-grid">
-            <div className="assurance-item">
-              <div className="assurance-icon">✓</div>
-              <h3>Accuracy</h3>
-            </div>
-            <div className="assurance-item">
-              <div className="assurance-icon">🔒</div>
-              <h3>Compliance</h3>
-            </div>
-            <div className="assurance-item">
-              <div className="assurance-icon">📊</div>
-              <h3>Accountability</h3>
-            </div>
+      <section className="assurance-section" data-aos="fade-up">
+        <h2 className="section-title">Our Assurance: Your Success is Our Priority</h2>
+        <p className="section-intro" style={{ maxWidth: '800px', margin: '0 auto 2.5rem auto' }}>
+          We build our partnerships on a foundation of trust and transparency. Our assurance is a promise to manage your revenue cycle with the highest standards of precision and integrity, allowing you to focus on what matters most: patient care.
+        </p>
+        <div className="assurance-grid">
+          <div className="assurance-item" data-aos="fade-up" data-aos-delay="100">
+            <div className="assurance-icon"><FaBullseye /></div>
+            <h3>Unyielding Accuracy</h3>
+            <p>
+              We guarantee meticulous attention to detail in every claim. Our certified coders and billing experts minimize errors, reduce denials, and ensure every charge is captured correctly, maximizing your reimbursement from the start.
+            </p>
           </div>
-          <p className="assurance-text">
-            We adapt to your existing workflows and systems, ensuring smooth coordination and measurable results.
-          </p>
+          <div className="assurance-item" data-aos="fade-up" data-aos-delay="200">
+            <div className="assurance-icon"><FaShieldAlt /></div>
+            <h3>Ironclad Compliance</h3>
+            <p>
+              Navigating the complexities of healthcare regulations is our expertise. We ensure your billing practices are always up-to-date with the latest payer policies, HIPAA regulations, and industry mandates, protecting your practice from compliance risks.
+            </p>
+          </div>
+          <div className="assurance-item" data-aos="fade-up" data-aos-delay="300">
+            <div className="assurance-icon"><FaClipboardCheck /></div>
+            <h3>Complete Accountability</h3>
+            <p>
+              Your dedicated Process Expert provides clear, consistent communication and detailed performance reports. We offer full transparency into your financial performance, holding ourselves accountable for the results we deliver.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -131,7 +143,7 @@ function Specialities() {
           That's why our onboarding and management process is designed to align completely with your clinic's unique workflow.
         </p>
 
-        <div className="process-steps">
+        {/* <div className="process-steps">
             {processSteps.map((step, index) => (
               <div 
                 key={index} 
@@ -148,6 +160,9 @@ function Specialities() {
                 </div>
               </div>
             ))}
+        </div> */}
+        <div>
+          <DevelopmentProcess1  />
         </div>
 
         <div className="process-conclusion">
@@ -156,10 +171,10 @@ function Specialities() {
       </section>
 
       {/* Specialties Section */}
-      <section className="specialties-section">
-        <div className="page-header">
-          <h1>Specialties We Serve</h1>
-          <p className="page-subtitle">
+      <section className="specialties-section" data-aos="fade-up">
+        <div className="page-header" data-aos="fade-up">
+          <h1 data-aos="fade-up">Specialties We Serve</h1>
+          <p className="page-subtitle" data-aos="fade-up" data-aos-delay="100">
             Expert RCM solutions tailored to your specialty's unique billing requirements
           </p>
         </div>
@@ -171,11 +186,17 @@ function Specialities() {
               'https://images.unsplash.com/photo-1551601651-2a8555f1a136?w=400&h=250&fit=crop&q=80',
               'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=400&h=250&fit=crop&q=80',
               'https://images.unsplash.com/photo-1551434678-e076c223a692?w=400&h=250&fit=crop&q=80',
-              'https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=400&h=250&fit=crop&q=80',
+              'https://images.unsplash.com/photo-1581591524425-c7e0978865fc?w=400&h=250&fit=crop&q=80',
               'https://images.unsplash.com/photo-1538108149393-fbbd81895907?w=400&h=250&fit=crop&q=80'
             ]
+            const animationType = index % 2 === 0 ? 'zoom-in-right' : 'zoom-in-left';
             return (
-              <div key={index} className="specialty-modern-card">
+              <div 
+                key={index} 
+                className="specialty-modern-card"
+                data-aos={animationType}
+                data-aos-delay={index * 100}
+              >
                 <img 
                   src={specialtyImages[index]} 
                   alt={specialty.title}
@@ -190,7 +211,7 @@ function Specialities() {
           })}
         </div>
 
-        <div className="specialties-footer">
+        <div className="specialties-footer" data-aos="fade-up">
           <p>
             <strong>Revionix serves every specialty with precision, reliability, and a commitment to results</strong> — 
             ensuring your focus stays on patient care while we manage your revenue.
@@ -202,4 +223,3 @@ function Specialities() {
 }
 
 export default Specialities
-

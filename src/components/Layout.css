@@ -122,7 +122,7 @@ main {
   background-color: var(--primary-blue);
   color: var(--white);
   padding: 4rem 2rem 2rem;
-  margin-top: 4rem;
+  /* margin-top: 4rem; */
 }
 
 .footer-content {

@@ -1,9 +1,10 @@
 .cta-section {
   border-radius: 16px;
   text-align: center;
-  color: var(--white);
-  margin-top: 4rem;
+  /* color: var(--white); */
+  margin-top: 1rem;
   padding: 4rem 2rem;
+  /* border: 2px solid rgba(255, 255, 255, 0.1); */
 }
 
 .cta-content h2 {

@@ -52,7 +52,7 @@
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-orange) 100%);
+  /* background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-orange) 100%); */
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.3s ease;
@@ -85,11 +85,14 @@
 
 .value-card:hover .value-icon {
   transform: scale(1.1);
-  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-orange) 100%);
+  /* background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-orange) 100%); */
+  background: var(--primary-blue );
   color: var(--white);
   border-color: transparent;
 }
-
+.value-card:hover h3 {
+  color: var(--primary-orange);
+}
 .value-content h3 {
   margin: 0 0 0.5rem 0;
   color: var(--primary-blue);

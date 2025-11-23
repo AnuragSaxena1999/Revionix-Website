@@ -40,12 +40,16 @@ export default function Values() {
   return (
     <section className="values-section">
       <div className="values-inner">
-        <h2 className="values-title">Our Values</h2>
-        <p className="values-intro">These principles guide everything we do — ensuring our clients can trust us to manage their revenue cycle efficiently and professionally.</p>
+        <h2 className="values-title" data-aos="fade-up">Our Values</h2>
+        <p className="values-intro" data-aos="fade-up" data-aos-delay="100">These principles guide everything we do — ensuring our clients can trust us to manage their revenue cycle efficiently and professionally.</p>
 
         <div className="values-grid">
           {values.map((v, i) => (
-            <div key={i} className="value-card">
+            <div 
+              key={i} 
+              className="value-card" 
+              data-aos="fade-up" 
+              data-aos-delay={i * 100}>
               <div className="value-icon">
                 <v.icon />
               </div>

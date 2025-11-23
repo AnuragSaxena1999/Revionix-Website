@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import './Pages.css'
+import { motion } from 'framer-motion'
 import { FaEnvelope, FaPhoneAlt, FaMapMarkerAlt, FaClock } from 'react-icons/fa'
 import emailjs from '@emailjs/browser'
 
@@ -106,11 +107,14 @@ function Contact() {
           </div>
         </div>
       )}
-      <div className="page-header" style={{
-          background: 'linear-gradient(135deg, rgba(30, 58, 138, 0.06) 0%, rgba(249, 115, 22, 0.06) 100%)',
-          backgroundImage: "url('/assets/contact-bg.png')",
+      <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="page-header"
+        style={{
+          backgroundImage: "linear-gradient(135deg, rgba(30, 58, 138, 0.7) 0%, rgba(20, 40, 100, 0.8) 100%), url('https://images.unsplash.com/photo-1556740738-b6a63e27c4df?w=1200&h=400&fit=crop&q=80')",
           backgroundSize: 'cover',
-          backgroundRepeat: 'no-repeat',
           backgroundPosition: 'center',
           boxShadow: '0 4px 24px rgba(0,0,0,0.08)',
           color: '#fff',
@@ -118,35 +122,41 @@ function Contact() {
           borderRadius: '16px',
           marginBottom: '3rem'
         }}>
-          <h1 style={{textShadow: '0 2px 8px rgba(0,0,0,0.25)'}}>Contact Us</h1>
-          <p className="page-subtitle" style={{textShadow: '0 1px 4px rgba(0,0,0,0.18)'}}>
+          <h1 style={{textShadow: '0 2px 8px rgba(0,0,0,0.25)', color:'#fff'}}>Contact Us</h1>
+          <p className="page-subtitle" style={{textShadow: '0 1px 4px rgba(0,0,0,0.18)' ,color:'#fff'}}>
             Get in touch with our team to learn how we can help your organization
           </p>
-        </div>
+        </motion.div>
 
       <div className="contact-container">
-        <div className="contact-info">
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.7, ease: 'easeOut' }}
+          className="contact-info"
+        >
           <picture>
             <source
               type="image/webp"
               srcSet={
-                'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=480&h=320&fit=crop&q=80&fm=webp 480w, ' +
-                'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=533&fit=crop&q=80&fm=webp 800w, ' +
-                'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&h=800&fit=crop&q=80&fm=webp 1200w'
+                'https://images.unsplash.com/photo-1586449480537-3a22cf98b04c?w=480&h=320&fit=crop&q=80&fm=webp 480w, ' +
+                'https://images.unsplash.com/photo-1586449480537-3a22cf98b04c?w=800&h=533&fit=crop&q=80&fm=webp 800w, ' +
+                'https://images.unsplash.com/photo-1586449480537-3a22cf98b04c?w=1200&h=800&fit=crop&q=80&fm=webp 1200w'
               }
               sizes="(max-width: 768px) 100vw, 50vw"
             />
             <source
               srcSet={
-                'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=480&h=320&fit=crop&q=80 480w, ' +
-                'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=533&fit=crop&q=80 800w, ' +
-                'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&h=800&fit=crop&q=80 1200w'
+                'https://images.unsplash.com/photo-1586449480537-3a22cf98b04c?w=480&h=320&fit=crop&q=80 480w, ' +
+                'https://images.unsplash.com/photo-1586449480537-3a22cf98b04c?w=800&h=533&fit=crop&q=80 800w, ' +
+                'https://images.unsplash.com/photo-1586449480537-3a22cf98b04c?w=1200&h=800&fit=crop&q=80 1200w'
               }
               sizes="(max-width: 768px) 100vw, 50vw"
             />
             <img
-              src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=533&fit=crop&q=80"
-              alt="Modern office space"
+              src="https://images.unsplash.com/photo-1586449480537-3a22cf98b04c?w=800&h=533&fit=crop&q=80"
+              alt="Customer support representative at a desk"
               className="contact-info-image"
               loading="lazy"
             />
@@ -184,9 +194,16 @@ function Contact() {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
 
-        <form className="contact-form" onSubmit={handleSubmit} role="form" aria-label="Contact form">
+        <motion.form
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.7, ease: 'easeOut', delay: 0.2 }}
+          className="contact-form"
+          onSubmit={handleSubmit} role="form" aria-label="Contact form"
+        >
           <h2>Send Us a Message</h2>
           {status.success && (
             <div className="form-success" role="status" aria-live="polite" style={{marginBottom: '1rem'}}>
@@ -262,11 +279,10 @@ function Contact() {
           <button type="submit" className="btn btn-primary btn-full" disabled={status.submitting} aria-busy={status.submitting}>
             {status.submitting ? 'Sending...' : 'Send Message'}
           </button>
-        </form>
+        </motion.form>
       </div>
     </div>
   )
 }
 
 export default Contact
-

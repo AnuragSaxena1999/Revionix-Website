@@ -6,7 +6,7 @@ import './Hero.css'
 function Hero() {
   return (
     <section className="hero">
-      <div className="hero-content">
+      <div className="hero-content" data-aos="fade-right" data-aos-duration="1000">
         <div className="moto">
           <h2 className="moto-text">Redefining Healthcare Revenue</h2>
         </div>
@@ -22,8 +22,8 @@ function Hero() {
           <Link to="/contact" className="btn btn-secondary">Contact Us Today</Link>
         </div>
       </div>
-      <div className="hero-image">
-        <picture>
+      <div className="hero-visual" data-aos="fade-left" data-aos-duration="1000">
+        <picture className="hero-image-container">
           <source
             type="image/webp"
             srcSet={

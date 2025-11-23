@@ -51,13 +51,17 @@ function Features() {
 
   return (
     <section className="features">
-      <h2 className="section-title">Our Core RCM Services</h2>
-      <p className="section-subtitle">
+      <h2 className="section-title" data-aos="fade-up">Our Core RCM Services</h2>
+      <p className="section-subtitle" data-aos="fade-up" data-aos-delay="100">
         Comprehensive solutions to optimize your revenue cycle from start to finish
       </p>
       <div className="features-grid">
         {featuresList.map((feature, index) => (
-          <div className="feature-card" key={index}>
+          <div 
+            className="feature-card" 
+            key={index} 
+            data-aos="zoom-in" 
+            data-aos-delay={index * 50}>
             <div className="feature-icon" aria-hidden="true">
               <feature.icon />
             </div>

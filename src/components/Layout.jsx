@@ -57,7 +57,7 @@ function Layout({ children }) {
           <div className="left-section">
             <Link to="/" className="logo">
               <img 
-                src="/logo.png" 
+                src="/logo1.png" 
                 alt="Revionix Logo" 
                 className="logo-img"
                 onError={(e) => {
@@ -140,10 +140,10 @@ function Layout({ children }) {
         
         <div className="footer-bottom">
           <p>&copy; {new Date().getFullYear()} Revionix. All rights reserved.</p>
-          <div className="footer-links">
+          {/* <div className="footer-links">
             <Link to="/privacy">Privacy Policy</Link>
             <Link to="/terms">Terms of Service</Link>
-          </div>
+          </div> */}
         </div>
       </footer>
     </div>
