@@ -34,10 +34,10 @@ export default function Vision() {
             and improve financial outcomes.
           </p>
 
-          <div className="vision-actions">
+          {/* <div className="vision-actions">
             <Link to="/contact" className="btn btn-primary">Contact Our Team</Link>
             <Link to="/services" className="btn btn-secondary">Explore Services</Link>
-          </div>
+          </div> */}
         </motion.div>
 
         <motion.div
