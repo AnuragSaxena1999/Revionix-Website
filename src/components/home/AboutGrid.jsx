@@ -13,8 +13,8 @@ function AboutGrid() {
     {
       image: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=400&h=300&fit=crop&q=80',
       title: 'Expertise',
-      description: 'Deep domain knowledge across Orthopedics, Neurology, Spine, and Primary Care with process precision for every client.',
-      link: '/services'
+      description: 'Deep domain knowledge across Orthopedics, Neurology, Spine, and Primary Care with process precision for every client.'
+      // link: '/services'
     },
     {
       image: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=400&h=300&fit=crop&q=80',
